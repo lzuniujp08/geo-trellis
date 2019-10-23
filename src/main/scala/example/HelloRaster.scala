@@ -2,7 +2,6 @@ package example
 
 import geotrellis.raster._
 import geotrellis.raster.mapalgebra.focal.Square
-import geotrellis.spark._
 
 object HelloRaster {
   def helloSentence = "Hello GeoTrellis"
