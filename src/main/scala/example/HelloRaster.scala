@@ -4,9 +4,8 @@ import geotrellis.raster._
 import geotrellis.raster.mapalgebra.focal.Square
 
 object HelloRaster {
-  def helloSentence = "Hello GeoTrellis"
-
-  def helloRaster(): Unit = {
+//  def helloRaster(): Unit = {
+  def helloRaster = {
     val nd = NODATA    //-2147483648
 
     val input = Array[Int](
@@ -21,18 +20,19 @@ object HelloRaster {
     //用一个n*n的窗口对矩阵做卷积，设中心值为平均值
     //Square(i) => n = 2 * i + 1
     val focalNeighborhood = Square(1)
-    println(focalNeighborhood)
     val meanTile = iat.focalMean(focalNeighborhood)
 
     for (i <- 0 to 3) {
       for (j <- 0 to 8) {
-        print(meanTile.getDouble(j, i) + " ")
+        val d = meanTile.getDouble(j, i).formatted("%.2f")
+        print(d + "\t")
       }
       println()
     }
   }
 
   def main(args: Array[String]): Unit = {
-    helloRaster()
+//    helloRaster()
+    helloRaster
   }
 }
