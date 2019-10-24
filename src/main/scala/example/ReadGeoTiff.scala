@@ -2,10 +2,10 @@ package example
 
 import java.util.Date
 
-import geotrellis.raster.{ColorRamps, RasterExtent, Tile}
+import geotrellis.raster.Tile
 import geotrellis.raster.io.geotiff._
 import geotrellis.raster.io.geotiff.reader.GeoTiffReader
-import geotrellis.raster.render.ColorMap
+import geotrellis.raster.render.{ColorMap, ColorRamps}
 
 object ReadGeoTiff {
   val path: String = "D:/data/gis_data/dem/beijing.tif"
@@ -19,7 +19,7 @@ object ReadGeoTiff {
     val tile: Tile = geoTiff.tile
     val colorMap = ColorMap(
       (0 to tile.findMinMax._2 by 4).toArray,
-      ColorRamps.HeatmapBlueToYellowToRedSpectrum
+      ColorRamps.HeatmapYellowToRed
     )
     tile.renderPng(colorMap).write("result/test.png")
     val end =new Date().getTime

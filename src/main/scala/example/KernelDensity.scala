@@ -7,7 +7,6 @@ import geotrellis.raster._
 import geotrellis.raster.mapalgebra.focal.Kernel
 import geotrellis.raster.render.ColorMap
 import geotrellis.raster.io.geotiff._
-import geotrellis.layer.LayoutDefinition
 
 object KernelDensity {
   val extent = Extent(-180, -90, 180, 90)
