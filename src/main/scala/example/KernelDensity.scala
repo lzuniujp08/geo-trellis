@@ -2,10 +2,11 @@ package example
 
 import geotrellis.proj4.LatLng
 import geotrellis.vector._
+
 import scala.util._
 import geotrellis.raster._
 import geotrellis.raster.mapalgebra.focal.Kernel
-import geotrellis.raster.render.ColorMap
+import geotrellis.raster.render.{ColorMap, ColorRamps}
 import geotrellis.raster.io.geotiff._
 
 object KernelDensity {
