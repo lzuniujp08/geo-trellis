@@ -19,7 +19,7 @@ object ReadGeoTiff {
     val tile: Tile = geoTiff.tile
     val colorMap = ColorMap(
       (0 to tile.findMinMax._2 by 4).toArray,
-      ColorRamps.HeatmapYellowToRed
+      ColorRamps.HeatmapBlueToYellowToRedSpectrum
     )
     tile.renderPng(colorMap).write("result/test.png")
     val end =new Date().getTime
